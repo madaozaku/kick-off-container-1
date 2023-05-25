@@ -6,13 +6,14 @@ WORKDIR /app
 
 # コピー
 COPY package*.json ./
+#COPY tsconfig*.json ./
+#COPY .env ./
+#COPY ./public ./public
+#COPY ./src ./src
 
 RUN npm install
 
-COPY ./public ./public
-COPY ./src ./src
-COPY tsconfig*.json ./
-COPY .env ./
+COPY .* .
 
 # ポート3000で実行
 EXPOSE 3000
